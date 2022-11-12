@@ -1,3 +1,5 @@
+package org.back2sqr0.coding.patterns.bitwiseXOR;
+
 /*
   Given an array of n-1 integers in the range from 1 to n, find the one number that is missing from the array.
 
@@ -33,7 +35,7 @@ Following are some important properties of XOR to remember:
     a ^ b = b ^ a
 
  */
-public class MissingNumber {
+public class MissingNumber_00 {
     public static int findMissingNumber(int[] arr) {
         int n = arr.length + 1;
         // find XOR of all numbers from 1 to n.
@@ -52,6 +54,6 @@ public class MissingNumber {
 
     public static void main(String[] args) {
         int[] arr = new int[] { 1, 5, 2, 6, 4 };
-        System.out.print("Missing number is: " + MissingNumber.findMissingNumber(arr));
+        System.out.print("Missing number is: " + MissingNumber_00.findMissingNumber(arr));
     }
 }
