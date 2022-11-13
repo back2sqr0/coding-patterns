@@ -46,6 +46,11 @@ We only expand the window when the frequency of the newly added character exceed
 The only thing we need to know is whether the maximum count exceeds the historical maximum count, and that can only happen
 because of the newly added char.
 
+Time Complexity: The above algorithm’s time complexity will be O(N), where ‘N’ is the number of letters in the input string.
+
+Space Complexity: As we expect only the lower case letters in the input string, we can conclude that the space complexity will be O(26)
+to store each letter’s frequency in the HashMap, which is asymptotically equal to O(1).
+
  */
 public class CharacterReplacement_06 {
     public static int findLength(String str, int k) {
