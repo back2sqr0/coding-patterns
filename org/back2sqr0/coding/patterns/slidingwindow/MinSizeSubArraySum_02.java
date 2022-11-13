@@ -44,14 +44,14 @@ Space Complexity: The algorithm runs in constant space O(1).
  */
 public class MinSizeSubArraySum_02 {
 
-    public static int findMinSubArray(int S, int[] nums) {
+    public static int findMinSubArray(int S, int[] arr) {
 
         int windowStart = 0, windowSum = 0;
         int smallestArrayLength = Integer.MAX_VALUE;
 
-        for(int windowEnd = 0; windowEnd < nums.length; windowEnd++){
+        for(int windowEnd = 0; windowEnd < arr.length; windowEnd++){
 
-            windowSum += nums[windowEnd]; // Add the next element to the window
+            windowSum += arr[windowEnd]; // Add the next element to the window
 
             while(windowSum >= S && (windowStart <= windowEnd)){ // Shrink the window as small as possible until the 'windowSum' is smaller than 'K'
                 //Calculate the arrayLength
@@ -61,7 +61,7 @@ public class MinSizeSubArraySum_02 {
                     smallestArrayLength = currentWindowLegnth;
                 }
 
-                windowSum -= nums[windowStart]; // Discard the element at 'windowStart' since it is going out of the window
+                windowSum -= arr[windowStart]; // Discard the element at 'windowStart' since it is going out of the window
                 windowStart++; // Shrink the window
             }
 
@@ -70,7 +70,7 @@ public class MinSizeSubArraySum_02 {
         return smallestArrayLength;
     }
 
-    public static void main(String args[]){
+    public static void main(String[] args){
         System.out.printf("For the Given Array %s,  Smallest Array Length: %d , who's Sum is %d \n", Arrays.toString(new int[]{2,1,5,2,3,2}), MinSizeSubArraySum_02.findMinSubArray(7, new int[]{2,1,5,2,3,2}),7);
         System.out.printf("For the Given Array %s,  Smallest Array Length: %d , who's Sum is %d \n", Arrays.toString(new int[]{3,4,1,1,6}), MinSizeSubArraySum_02.findMinSubArray(8, new int[]{3,4,1,1,6}),8);
         System.out.printf("For the Given Array %s,  Smallest Array Length: %d , who's Sum is %d", Arrays.toString(new int[]{2, 1, 5, 2, 8}), MinSizeSubArraySum_02.findMinSubArray(7, new int[]{2, 1, 5, 2, 8}),7);
